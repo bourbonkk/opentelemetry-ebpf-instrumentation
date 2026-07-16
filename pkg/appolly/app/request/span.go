@@ -1339,7 +1339,7 @@ func spanAttributes(s *Span) SpanAttributes {
 			"errorMessage":     message,
 			"errorDescription": s.SQLErrorDescription(),
 		}
-	case EventTypeRedisServer:
+	case EventTypeRedisServer, EventTypeRedisClient:
 		return SpanAttributes{
 			"serverAddr": SpanHost(s),
 			"serverPort": strconv.Itoa(s.HostPort),
